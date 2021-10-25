@@ -14,3 +14,7 @@
 ### You can run the test by: ./gradlew test
 
 ### You can run the app by: ./gradlew bootRun
+
+# class 12
+
+I used this command to run single gradle ./gradlew bootrun
