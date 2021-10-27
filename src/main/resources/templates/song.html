@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link th:href="@{./css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div   class="album py-5 bg-light">
+    <div  class="container">
+        <div  class="col">
+            <div  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" th:alt="${album.title}" th:src="${album.imageUrl}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text th:text=" 'Album Title: ' +${album.title}" x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+                    <div  class="card-body">
+                        <p  th:text=" 'Artist: ' +${album.artist}" class="card-text"/>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small th:text=" 'Number of Songs: ' +${album.songCount}" class="text-muted"></small>
+                            <small th:text=" 'Album Length: ' +${album.length}+ 's'" class="text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="/song/addSong/" method="POST">
+<label>Album Title:</label>
+<input type="text" name="album" th:value="${album.title}" required readonly> <br>
+<label>Title:</label>
+<input type="text" name="title" required> <br>
+<label>Length:</label>
+<input type="number" name="length" required> <br>
+<label>Track Number:</label>
+<input type="number" name="trackNumber" required> <br>
+<input type="submit" name="submit">
+</form>
+
+<div class="cardInfo">
+    <ol>
+        <li th:each="song: ${album.song}">
+            <p th:text="${song.title} + ': ' + ${song.length} + ' seconds'"></p>
+        </li>
+    </ol>
+</div>
+</body>
+</html>
