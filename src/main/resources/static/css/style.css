@@ -5,14 +5,36 @@ margin:0px;
 
 .header {
     display :flex;
+    background: #263238;
+}
+.logo{
+    display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    background: #263238;
-    color: #f4f4f4;
 }
-.footer{
-    position: fixed;
+.logo h2 a{
+    font-size: 30px;
+    color: #f4f4f4;
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+nav li a{
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 24px;
+}
+
+.main {
+    position: relative;
+}
+
+footer{
     bottom: 0;
     left: 0;
     width: 100%;
@@ -22,8 +44,8 @@ margin:0px;
 }
 
 .icons{
-    padding-top: 1rem;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 2px;
 }
 
 .icons a{

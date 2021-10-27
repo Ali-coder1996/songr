@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <title>Hello World</title>
     <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-    <link th:href="@{style.css}" rel="stylesheet"/>
+    <link th:href="@{./css/style.css}" rel="stylesheet"/>
 </head>
 <body>
-<header class="header">Home page</header>
+<header class="header">
+    <div class="logo">
+        <h2><a th:href="@{/}">Songr</a></h2>
+    </div>
+    <nav>
+        <li><a th:href="@{/albums}">Albums</a></li>
+        <li><a th:href="@{/capitalize/ali}">capitalize</a></li>
+        <li><a th:href="@{/hello?name=Ahmad}">hello</a></li>
+    </nav>
+</header><main>
 <h1 class="homepage" th:text="'Nice to meet you ' +${name}"></h1>
-<footer class="footer">
-    <div class="icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <p class="company-name">
-            ALi ALhjouj &copy; 2021, ALL Rights Reserved
-        </p>
+</main>
+<footer >
+    <div class="footer">
+        <div class="icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <p class="company-name">
+                ALi ALhjouj &copy; 2021, ALL Rights Reserved
+            </p>
+        </div>
     </div>
 </footer>
 </body>

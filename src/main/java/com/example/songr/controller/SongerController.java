@@ -43,13 +43,7 @@ public class SongerController {
     }
 
     @PostMapping("/addAlbums")
-    public RedirectView addAlbums(@RequestParam(value = "title") String title ,
-                                  @RequestParam(value= "artist") String artist,
-                                  @RequestParam(value="songCount") int songCount,
-                                  @RequestParam(value="length") int length,
-                                  @RequestParam(value="imageUrl") String imageUrl){
-
-        Album album = new Album(title,artist,songCount,length,imageUrl);
+    public RedirectView addAlbums(Album album){
         albumsRepositories.save(album);
         return new RedirectView("/albums");
     }
